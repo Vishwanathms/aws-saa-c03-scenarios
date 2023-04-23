@@ -1,3 +1,8 @@
+## This lab would involve below AWS services.
+## VPC, EC2, SG, NACL, VPC-Peering, EBS, Snapshot, AMI, IAM
+
+
+
 ## Setting up a Redis-backed Counter with Flask and Python
 
 ### Introduction
