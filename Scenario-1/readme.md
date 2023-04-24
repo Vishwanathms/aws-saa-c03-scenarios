@@ -23,7 +23,9 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 1. Launch an Ubuntu EC2 instance (VM-1)  with ports 80, 8080, and 6379 open
 2. Install Apache2, Python, and the Redis Python library -- Refer "frontend-app-readiness.md(https://github.com/Vishwanathms/aws-saa-c03-scenarios/blob/main/Scenario-1/frontend-app-readiness.md)"
 3. Set up the frontend HTML with the below code, to be placed in File Path: /var/www/html/index.html.
-
+```
+sudo vi /var/www/html/index.html
+```
 
 #### Frontend script:
 
