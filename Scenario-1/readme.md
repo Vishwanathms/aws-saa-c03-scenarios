@@ -21,7 +21,7 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 
 1. Launch an Ubuntu EC2 instance with ports 80, 8080, and 6379 open
 2. Install Apache2, Python, and the Redis Python library -- Refer "frontend-app-readiness.md"
-3. Set up the frontend HTML with the below code, to be placed in 
+3. Set up the frontend HTML with the below code, to be placed in File Path: /var/www/html/index.html.
 
 
 #### Frontend script:
@@ -76,6 +76,7 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 3. Add this line "bind 0.0.0.0" to the redis.conf file inside /etc/redis/redis.conf ( This can be added any where in the file) 
 
 ### Backend script:
+Create a python file on Path: /home/ubuntu/app.py
 
 ```python
 from flask import Flask, jsonify
@@ -105,6 +106,11 @@ def get():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
+```
+
+### Run the backend script.
+```
+python3 app.py
 ```
 
 Replace `your_ec2_instance_ip_here` with the IP address of your EC2 instance that's hosting the backend server, and `your_redis_instance_ip_here` with the IP address of your EC2 instance that has redis.
