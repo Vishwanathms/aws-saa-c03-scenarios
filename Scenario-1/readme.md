@@ -4,7 +4,8 @@
 ![image](https://user-images.githubusercontent.com/19227977/233891049-6cebac4a-6831-4b23-9e81-554b6c50bb53.png)
 
 
-## Setting up a Redis-backed Counter with Flask and Python
+
+## Setting up a Redis-backed Counter with Flask and Python on the VM-1 and VM-2
 
 ### Introduction
 
@@ -19,7 +20,7 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 
 ### Steps to setup Frontend server
 
-1. Launch an Ubuntu EC2 instance with ports 80, 8080, and 6379 open
+1. Launch an Ubuntu EC2 instance (VM-1)  with ports 80, 8080, and 6379 open
 2. Install Apache2, Python, and the Redis Python library -- Refer "frontend-app-readiness.md"
 3. Set up the frontend HTML with the below code, to be placed in File Path: /var/www/html/index.html.
 
@@ -71,7 +72,7 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 
 ### Steps to setup Backend server
 
-1. Launch another EC2 instance
+1. Launch another EC2 instance (VM-2)
 2. Install Redis server, refer "Backend-App-Readiness.md"
 3. Add this line "bind 0.0.0.0" to the redis.conf file inside /etc/redis/redis.conf ( This can be added any where in the file) 
 
