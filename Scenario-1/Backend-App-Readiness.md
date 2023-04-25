@@ -33,3 +33,24 @@ sudo systemctl enable redis-server
 ```
 
 After completing these steps, you should have Redis server installed and running on your Ubuntu system.
+
+# To install Python with Flask plugin server on Ubuntu, you can follow these steps:
+
+1. Install Python by running the following command:
+
+```
+sudo apt-get install python3
+```
+
+2. Install pip, which is the package installer for Python, by running the following command:
+
+```
+sudo apt-get install python3-pip
+```
+
+3. Install the Redis Python library by running the following command:
+
+```
+sudo pip3 install redis
+sudo pip3 install flask
+```
