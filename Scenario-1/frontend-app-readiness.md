@@ -33,8 +33,8 @@ File Path: /var/www/html/index.html
 sudo vi /etc/nginx/sites-available/backend.conf
 
 server {
-    listen 90;
-    server_name 3.237.242.44;
+    listen 90; # Nginx proxy listening port
+    server_name 3.3.3.3; # Public Ip of the frontend App
 
     location / {
         proxy_pass http://your_private_instance_ip:8080;
