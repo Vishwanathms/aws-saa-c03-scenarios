@@ -78,10 +78,19 @@ sudo vi /var/www/html/index.html
 
 1. Launch another EC2 instance (VM-2)
 2. Install Redis server, refer "Backend-App-Readiness.md(https://github.com/Vishwanathms/aws-saa-c03-scenarios/blob/main/Scenario-1/Backend-App-Readiness.md)"
-3. Add this line "bind 0.0.0.0" to the redis.conf file inside /etc/redis/redis.conf ( This can be added any where in the file) 
+3. Add this line "bind 0.0.0.0" to the redis.conf file inside /etc/redis/redis.conf ( This can be added any where in the file)
+
+```
+vi /etc/redis/redis.conf
+```
+Add "bind 0.0.0.0" --> Any where in the above file and save it
 
 ### Backend script:
-Create a python file on Path: /home/ubuntu/app.py
+
+```
+vi /home/ubuntu/app.py
+```
+paste the below python in this
 
 ```python
 from flask import Flask, jsonify
