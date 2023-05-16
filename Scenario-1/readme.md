@@ -1,7 +1,9 @@
 ## This lab would involve below AWS services.
 ## VPC, EC2, SG, NACL, VPC-Peering, EBS, Snapshot, AMI, IAM
 
-![image](https://user-images.githubusercontent.com/19227977/233891049-6cebac4a-6831-4b23-9e81-554b6c50bb53.png)
+![image](https://github.com/Vishwanathms/aws-saa-c03-scenarios/assets/19227977/da7301d4-12c1-43b3-9072-a4f8128f3c4b)
+![image](https://github.com/Vishwanathms/aws-saa-c03-scenarios/assets/19227977/95f40b24-5968-492e-b68d-6e86a6485bc6)
+![image](https://github.com/Vishwanathms/aws-saa-c03-scenarios/assets/19227977/21a1065c-eda9-4094-a640-6c610b426e10)
 
 
 
@@ -20,7 +22,7 @@ This tutorial will guide you through the process of setting up a Redis-backed co
 
 ### Steps to setup Frontend server
 
-1. Launch an Ubuntu EC2 instance (VM-1)  with ports 80, 8080, and 6379 open
+1. Launch an Ubuntu EC2 instance (VM-1)  with ports 80, & 90 open
 2. Install Apache2, Python, and the Redis Python library -- Refer "frontend-app-readiness.md(https://github.com/Vishwanathms/aws-saa-c03-scenarios/blob/main/Scenario-1/frontend-app-readiness.md)"
 3. Set up the frontend HTML with the below code, to be placed in File Path: /var/www/html/index.html.
 ```
@@ -46,7 +48,7 @@ sudo vi /var/www/html/index.html
     const decrBtn = document.getElementById("decrBtn");
 
     function updateCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/get")
+        fetch("http://Public-IP-of-frontend-app:90/get")
         .then(response => response.json())
         .then(data => {
             countElem.innerText = data.count;
@@ -54,12 +56,12 @@ sudo vi /var/www/html/index.html
     }
 
     function increaseCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/incr", {method: 'POST'})
+        fetch("http://Public-IP-of-frontend-app:90/incr", {method: 'POST'})
         .then(() => updateCount());
     }
 
     function decreaseCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/decr", {method: 'POST'})
+        fetch("http://Public-IP-of-frontend-app:90/decr", {method: 'POST'})
         .then(() => updateCount());
     }
 
